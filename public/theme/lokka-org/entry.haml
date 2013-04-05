@@ -1,0 +1,9 @@
+.header
+  %h2.title= @entry.title
+.article.section
+  .body
+    ~ @entry.body
+  .footer
+    .created_at= l @entry.created_at.to_time
+    - if logged_in?
+      %p= link_to t.edit, @entry.edit_link
